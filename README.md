@@ -173,35 +173,35 @@ Add Package To Your Project With Command
 
 - .NET CLI
 ```bash
-  dotnet add package Stimulsoft.Reports.Engine.NetCore --version 2024.1.3
+  dotnet add package StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.1.3
 ```
 
 - Package Manager
 ```bash
-  NuGet\Install-Package Stimulsoft.Reports.Engine.NetCore -Version 2024.1.3
+  NuGet\Install-Package StimulsoftReports.Engine.NetCore.PersianPdfExportere -Version 2024.1.3
 ```
 
 - Package Reference
 ```bash
-  <PackageReference Include="Stimulsoft.Reports.Engine.NetCore" Version="2024.1.3" />
+  <PackageReference Include="StimulsoftReports.Engine.NetCore.PersianPdfExportere" Version="2024.1.3" />
 ```
 
 - Packet CLI
 ```bash
-  paket add Stimulsoft.Reports.Engine.NetCore --version 2024.1.3
+  paket add StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.1.3
 ```
 
 - Script & InterActive
 ```bash
-  #r "nuget: Stimulsoft.Reports.Engine.NetCore, 2024.1.3"
+  #r "nuget: StimulsoftReports.Engine.NetCore.PersianPdfExportere, 2024.1.3"
 ```
 
 - Cake
 ```bash
-  // Install Stimulsoft.Reports.Engine.NetCore as a Cake Addin
-     #addin nuget:?package=Stimulsoft.Reports.Engine.NetCore&version=2024.1.3
-  // Install Stimulsoft.Reports.Engine.NetCore as a Cake Tool
-     #tool nuget:?package=Stimulsoft.Reports.Engine.NetCore&version=2024.1.3
+  // Install StimulsoftReports.Engine.NetCore.PersianPdfExportere as a Cake Addin
+     #addin nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.1.3
+  // Install StimulsoftReports.Engine.NetCore.PersianPdfExportere as a Cake Tool
+     #tool nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.1.3
 ```
 
 Be Lucky !!!
