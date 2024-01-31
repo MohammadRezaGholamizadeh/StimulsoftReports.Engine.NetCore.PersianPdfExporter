@@ -1,8 +1,9 @@
 ﻿using Stimulsoft.Base;
+using Stimulsoft.Drawing;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Dictionary;
 using Stimulsoft.Report.Export;
-using System.Drawing;
+using SystemDrawing = System.Drawing;
 using System.Text;
 
 namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
@@ -26,7 +27,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             this StiReportConfiguration configuration,
             byte[] font,
             string? alias = null,
-            FontStyle? fontStyle = null)
+            SystemDrawing.FontStyle? fontStyle = null)
         {
             try
             {
@@ -35,7 +36,39 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
                         font,
                         alias,
                         fontStyle);
+
                 configuration.Fonts.Add(font);
+            }
+            catch
+            {
+                throw;
+            }
+
+            return configuration;
+        }
+
+        public static List<FontFamily> GetAllSettedFontsUntilNow()
+        {
+            return StiFontCollection.Instance.Families.Distinct().ToList();
+        }
+
+        public static StiReportConfiguration SetCustomFont(
+           this StiReportConfiguration configuration,
+           string fontName,
+           string extension,
+           byte[] fontContent,
+           string? alias = null)
+        {
+            try
+            {
+                StiFontCollection
+                    .AddResourceFont(
+                        fontName,
+                        fontContent,
+                        extension,
+                        alias);
+
+                configuration.Fonts.Add(fontContent);
             }
             catch
             {
@@ -61,6 +94,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
             return configuration;
         }
+
         public static StiReportConfiguration AddDataContentAsBusinessObject(
           this StiReportConfiguration tools,
           string name,
@@ -70,6 +104,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             {
                 tools.ReportData.Add(name, data);
             }
+
             catch
             {
                 throw;
@@ -77,6 +112,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
             return tools;
         }
+
         public static StiReport RenderWithBusinessObjectDataMode(
            this StiReportConfiguration configuration,
            bool showProgressState = false)
@@ -98,6 +134,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
         private static void SetDefaultMrtFileFont(StiReportConfiguration configuration)
         {
+            var mrtFontName = "";
             try
             {
                 var mrtFileFonts = Encoding.UTF8
@@ -112,6 +149,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
                 foreach (var mrtFileFont in mrtFileFonts)
                 {
+                    mrtFontName = mrtFileFont;
                     var fontExtension =
                         Path.GetExtension(
                              Path.GetFullPath(
@@ -119,6 +157,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
                                   .Assembly
                                   .GetManifestResourceNames()
                                   .First(_ => _.Contains($"{typeof(StiReportEngine).Namespace}.Fonts.{mrtFileFont}.ttf"))));
+
                     var fontPath = $"{typeof(StiReportEngine).Namespace}.Fonts.{mrtFileFont}{fontExtension}";
                     var fontStream =
                          typeof(StiReportEngine)
@@ -133,6 +172,15 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             }
             catch (Exception)
             {
+                if (!StiFontCollection
+                     .Instance
+                     .Families
+                     .Any(_ => _.Name == mrtFontName))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($" ::Error:: => !! Font {'"'}{mrtFontName}{'"'} Not Found To Set In Export !!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
             }
         }
 

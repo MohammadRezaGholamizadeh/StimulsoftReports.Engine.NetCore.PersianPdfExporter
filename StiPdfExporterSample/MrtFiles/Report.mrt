@@ -45,7 +45,7 @@
 							<ClientRectangle>0.1,0,7.5,0.3</ClientRectangle>
 							<Conditions isList="true" count="0" />
 							<Expressions isList="true" count="0" />
-							<Font>Afshid,12</Font>
+							<Font>Shabnam,12</Font>
 							<GrowToHeight>True</GrowToHeight>
 							<HorAlignment>Width</HorAlignment>
 							<Margins>0,0,0,0</Margins>
