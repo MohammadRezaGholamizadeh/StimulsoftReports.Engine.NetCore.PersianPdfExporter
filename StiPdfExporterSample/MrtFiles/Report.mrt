@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+	<Dictionary Ref="1" type="Dictionary" isKey="true">
+		<BusinessObjects isList="true" count="1">
+			<Datas Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+				<Alias>Datas</Alias>
+				<BusinessObjects isList="true" count="0" />
+				<Category>Datas</Category>
+				<Columns isList="true" count="1">
+					<value>Data,System.String</value>
+				</Columns>
+				<Dictionary isRef="1" />
+				<Guid>114e7736b97a4027a9d56995191ed775</Guid>
+				<Name>Datas</Name>
+			</Datas>
+		</BusinessObjects>
+		<Databases isList="true" count="0" />
+		<DataSources isList="true" count="0" />
+		<Relations isList="true" count="0" />
+		<Report isRef="0" />
+		<Resources isList="true" count="0" />
+		<Variables isList="true" count="0" />
+	</Dictionary>
+	<EngineVersion>EngineV2</EngineVersion>
+	<GlobalizationStrings isList="true" count="0" />
+	<Key>255968301ae34e1f8efb64da3e6d677b</Key>
+	<MetaTags isList="true" count="0" />
+	<Pages isList="true" count="1">
+		<Page1 Ref="3" type="Page" isKey="true">
+			<Border>None;Black;2;Solid;False;4;Black</Border>
+			<Brush>Transparent</Brush>
+			<Components isList="true" count="1">
+				<DataBand1 Ref="4" type="DataBand" isKey="true">
+					<Brush>Transparent</Brush>
+					<BusinessObjectGuid>114e7736b97a4027a9d56995191ed775</BusinessObjectGuid>
+					<CanBreak>True</CanBreak>
+					<CanShrink>True</CanShrink>
+					<ClientRectangle>0,0.2,7.72,0.5</ClientRectangle>
+					<Components isList="true" count="1">
+						<Text1 Ref="5" type="Text" isKey="true">
+							<AutoWidth>True</AutoWidth>
+							<Brush>Transparent</Brush>
+							<CanBreak>True</CanBreak>
+							<CanGrow>True</CanGrow>
+							<ClientRectangle>0.1,0,7.5,0.3</ClientRectangle>
+							<Conditions isList="true" count="0" />
+							<Expressions isList="true" count="0" />
+							<Font>Afshid,12</Font>
+							<GrowToHeight>True</GrowToHeight>
+							<HorAlignment>Width</HorAlignment>
+							<Margins>0,0,0,0</Margins>
+							<Name>Text1</Name>
+							<Page isRef="3" />
+							<Parent isRef="4" />
+							<Text>{Datas.Data}</Text>
+							<TextBrush>Black</TextBrush>
+							<TextOptions>,,RightToLeft=True,,WordWrap=True,A=0</TextOptions>
+							<Type>Expression</Type>
+							<VertAlignment>Center</VertAlignment>
+						</Text1>
+					</Components>
+					<Conditions isList="true" count="0" />
+					<DataRelationName isNull="true" />
+					<DataSourceName isNull="true" />
+					<Expressions isList="true" count="0" />
+					<Filters isList="true" count="0" />
+					<Name>DataBand1</Name>
+					<Page isRef="3" />
+					<Parent isRef="3" />
+					<Sort isList="true" count="0" />
+				</DataBand1>
+			</Components>
+			<Conditions isList="true" count="0" />
+			<Expressions isList="true" count="0" />
+			<Guid>735693877a0c45ae8688290837e7b35a</Guid>
+			<Margins>0.39,0.39,0.39,0.39</Margins>
+			<Name>Page1</Name>
+			<PageHeight>11</PageHeight>
+			<PageWidth>8.5</PageWidth>
+			<PaperSize>Letter</PaperSize>
+			<Report isRef="0" />
+		</Page1>
+	</Pages>
+	<ReferencedAssemblies isList="true" count="8">
+		<value>System.Dll</value>
+		<value>System.Drawing.Dll</value>
+		<value>System.Windows.Forms.Dll</value>
+		<value>System.Data.Dll</value>
+		<value>System.Xml.Dll</value>
+		<value>Stimulsoft.Controls.Dll</value>
+		<value>Stimulsoft.Base.Dll</value>
+		<value>Stimulsoft.Report.Dll</value>
+	</ReferencedAssemblies>
+	<ReportAlias>Report</ReportAlias>
+	<ReportChanged>1/28/2024 11:00:09 PM</ReportChanged>
+	<ReportCreated>1/28/2024 8:35:11 PM</ReportCreated>
+	<ReportFile>D:\StimulsoftProject\Stimulsoft.Reports.Engine.NetCore.PdfExpoerter\StimulsoftPdfExporterSample\MrtFiles\Report.mrt</ReportFile>
+	<ReportGuid>b68a32c3c4f74fab86a0338e61946e39</ReportGuid>
+	<ReportName>Report</ReportName>
+	<ReportUnit>Inches</ReportUnit>
+	<ReportVersion>2023.1.1.0</ReportVersion>
+	<Script>
+		using System;
+		using System.Drawing;
+		using System.Windows.Forms;
+		using System.Data;
+		using Stimulsoft.Controls;
+		using Stimulsoft.Base.Drawing;
+		using Stimulsoft.Report;
+		using Stimulsoft.Report.Dialogs;
+		using Stimulsoft.Report.Components;
+
+		namespace Reports
+		{
+		public class Report : Stimulsoft.Report.StiReport
+		{
+		public Report()        {
+		this.InitializeComponent();
+		}
+
+		#region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+		}
+		}
+	</Script>
+	<ScriptLanguage>CSharp</ScriptLanguage>
+	<Styles isList="true" count="0" />
+</StiSerializer>
