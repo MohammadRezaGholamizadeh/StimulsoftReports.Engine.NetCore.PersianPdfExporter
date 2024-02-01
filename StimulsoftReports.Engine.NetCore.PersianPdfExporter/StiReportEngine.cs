@@ -1,4 +1,5 @@
 ﻿using Stimulsoft.Base;
+using Stimulsoft.Drawing;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Export;
 using StimulsoftReports.Engine.NetCore.PersianPdfExporter.DtoFile;
@@ -54,6 +55,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
         private static void SetDefaultMrtFileFont(DtoFile.StiReportResource configuration)
         {
+            var mrtFontName = "";
             try
             {
                 var mrtFileFonts = Encoding.UTF8
@@ -68,6 +70,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
                 foreach (var mrtFileFont in mrtFileFonts)
                 {
+                    mrtFontName = mrtFileFont;
                     var fontExtension =
                         Path.GetExtension(
                              Path.GetFullPath(
@@ -75,6 +78,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
                                   .Assembly
                                   .GetManifestResourceNames()
                                   .First(_ => _.Contains($"{typeof(StiReportEngine).Namespace}.Fonts.{mrtFileFont}.ttf"))));
+
                     var fontPath = $"{typeof(StiReportEngine).Namespace}.Fonts.{mrtFileFont}{fontExtension}";
                     var fontStream =
                          typeof(StiReportEngine)
@@ -89,6 +93,15 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             }
             catch (Exception)
             {
+                if (!StiFontCollection
+                     .Instance
+                     .Families
+                     .Any(_ => _.Name == mrtFontName))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($" ::Error:: => !! Font {'"'}{mrtFontName}{'"'} Not Found To Set In Export !!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
             }
         }
 
