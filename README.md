@@ -18,9 +18,17 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   SetLicenseKey(licenseKey);
 
-  SetCustomFont(font, alias, fontStyle);
+  AddCustomFontBytes(font, alias, fontStyle);
 
-  SetCustomFont(fontName, extension, fontContent, alias);
+  AddCustomFontsBytes(fonts);
+
+  AddCustomFontFile(font);
+
+  AddCustomFontFiles(fonts);
+
+  AddCustomFontResource(font);
+
+  AddCustomFontResources(fonts);
 
   GetAllSettedFontsUntilNow();
 
@@ -28,7 +36,7 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   AddDataContentAsBusinessObject(name, data);
 
-  RenderWithBusinessObjectDataMode(showProgressState);
+  Render(showProgressState);
 
   ExportPdfToPath(absolutePath);
 
@@ -36,6 +44,13 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   ExportPdfAsCustomStream(customStream, settings);
 
+
+
+  AddDataContentAsDataSource(StiReportDataSource data);     => Has 2 OverLoads Methods
+
+  AddDataContent(name,data);                                => Has 19 OverLoad Methods
+
+  AddDataContentAsBusinessObject(name, data)                => Has 3 OverLoad Methods
 ```
 
 
@@ -56,7 +71,7 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set License Key To Stimulsoft Report Engine.
 
-- #### **SetCustomFont(font, alias, fontStyle)**
+- #### **AddCustomFontByte(font, alias, fontStyle)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `font`      | `byte[]` | **Required**. Font Bytes |
@@ -65,7 +80,43 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
 
-- #### **SetCustomFont(fontName, extension, fontContent, alias)**
+- #### **AddCustomFontByte(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<byte[]>` | **Required**. Fonts Bytes |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+
+- #### **AddCustomFontFile(font)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `font`      | `CustomFontFile` | **Required**. Dto Object With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontFiles(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<CustomFontFile>` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontResource(font)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `font`      | `CustomFontResource` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontResources(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<CustomFontResource>` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFont(fontName, extension, fontContent, alias)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `fontName`      | `string` | **Required**. Font Name |
@@ -74,7 +125,6 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 | `alias`      | `string?` | **Not Required**. Font Alias |
 
 **Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
-
 
 - #### **GetAllSettedFontsUntilNow()**
 |Description                                                                   |
@@ -90,6 +140,7 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set Mrt File To Stimulsoft Report Engine.
 
+
 - #### **AddDataContentAsBusinessObject(name, data);**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
@@ -98,7 +149,80 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
 
-- #### **RenderWithBusinessObjectDataMode(showProgressState)**
+
+- #### **AddDataContentAsBusinessObjects(datas);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IList<StiBusinessObjectData>` | **Required**. Name Of Business Objects Data That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+
+- #### **AddDataContentAsBusinessObject(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IDictionary<string, dynamic> datas` | **Required**. Name Of Business Objects Data That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsDataSources(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IDictionary<string, StiReportDataSource>` | **Required**. Datas Of DataSources That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+
+- #### **AddDataContentAsDataSource(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `data`      | `StiReportDataSource` | **Required**. Data Of DataSource That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsDataSource(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. Name Of DataSource That You Created In Stimulsoft Designer|
+| `data`      | `object` | **Required**. Data Of DataSource That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+
+- #### **AddDataContent(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. Name Of DataContent That You Created In Stimulsoft Designer|
+| `data`      | `object` | **Required**. Data Of DataContent That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+
+- #### **AddDataContent(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. DataTable name in the Data Store.|
+| `dataTable`      | `DataTable` | **Required**. DataTable for registration |
+
+**Method Description** :  Registers an object in the Data Store.
+
+- #### **AddDataContent(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `dataSet`      | `DataSet` | **Required**. DataSet for registration.       |
+| `name`      | `string` | **Required**.  Prefix for object registration.    |
+
+**Method Description** :  Registers all DataTables and DataRelations which are in the specified DataSet in the Data Store.
+
+- #### **AddDataContent(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.  Prefix for object registration.    |
+
+**Method Description** :  Registers an object in the Data Store.
+
+
+- #### **Render(showProgressState)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `showProgressState`      | `bool` | **Required**. Start Rendering The Report With Data And Fonts That You Setted In Stimulsoft Design By Sti Report Engine|
