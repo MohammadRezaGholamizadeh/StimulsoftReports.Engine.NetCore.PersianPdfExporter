@@ -1,105 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <StiSerializer version="1.02" type="Net" application="StiReport">
-	<Dictionary Ref="1" type="Dictionary" isKey="true">
-		<BusinessObjects isList="true" count="1">
-			<Datas Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
-				<Alias>Datas</Alias>
-				<BusinessObjects isList="true" count="0" />
-				<Category>Datas</Category>
-				<Columns isList="true" count="1">
-					<value>Data,System.String</value>
-				</Columns>
-				<Dictionary isRef="1" />
-				<Guid>114e7736b97a4027a9d56995191ed775</Guid>
-				<Name>Datas</Name>
-			</Datas>
-		</BusinessObjects>
-		<Databases isList="true" count="0" />
-		<DataSources isList="true" count="0" />
-		<Relations isList="true" count="0" />
-		<Report isRef="0" />
-		<Resources isList="true" count="0" />
-		<Variables isList="true" count="0" />
-	</Dictionary>
-	<EngineVersion>EngineV2</EngineVersion>
-	<GlobalizationStrings isList="true" count="0" />
-	<Key>255968301ae34e1f8efb64da3e6d677b</Key>
-	<MetaTags isList="true" count="0" />
-	<Pages isList="true" count="1">
-		<Page1 Ref="3" type="Page" isKey="true">
-			<Border>None;Black;2;Solid;False;4;Black</Border>
-			<Brush>Transparent</Brush>
-			<Components isList="true" count="1">
-				<DataBand1 Ref="4" type="DataBand" isKey="true">
-					<Brush>Transparent</Brush>
-					<BusinessObjectGuid>114e7736b97a4027a9d56995191ed775</BusinessObjectGuid>
-					<CanBreak>True</CanBreak>
-					<CanShrink>True</CanShrink>
-					<ClientRectangle>0,0.2,7.72,0.5</ClientRectangle>
-					<Components isList="true" count="1">
-						<Text1 Ref="5" type="Text" isKey="true">
-							<AutoWidth>True</AutoWidth>
-							<Brush>Transparent</Brush>
-							<CanBreak>True</CanBreak>
-							<CanGrow>True</CanGrow>
-							<ClientRectangle>0.1,0,7.5,0.3</ClientRectangle>
-							<Conditions isList="true" count="0" />
-							<Expressions isList="true" count="0" />
-							<Font>Afshid,12</Font>
-							<GrowToHeight>True</GrowToHeight>
-							<HorAlignment>Width</HorAlignment>
-							<Margins>0,0,0,0</Margins>
-							<Name>Text1</Name>
-							<Page isRef="3" />
-							<Parent isRef="4" />
-							<Text>{Datas.Data}</Text>
-							<TextBrush>Black</TextBrush>
-							<TextOptions>,,RightToLeft=True,,WordWrap=True,A=0</TextOptions>
-							<Type>Expression</Type>
-							<VertAlignment>Center</VertAlignment>
-						</Text1>
-					</Components>
-					<Conditions isList="true" count="0" />
-					<DataRelationName isNull="true" />
-					<DataSourceName isNull="true" />
-					<Expressions isList="true" count="0" />
-					<Filters isList="true" count="0" />
-					<Name>DataBand1</Name>
-					<Page isRef="3" />
-					<Parent isRef="3" />
-					<Sort isList="true" count="0" />
-				</DataBand1>
-			</Components>
-			<Conditions isList="true" count="0" />
-			<Expressions isList="true" count="0" />
-			<Guid>735693877a0c45ae8688290837e7b35a</Guid>
-			<Margins>0.39,0.39,0.39,0.39</Margins>
-			<Name>Page1</Name>
-			<PageHeight>11</PageHeight>
-			<PageWidth>8.5</PageWidth>
-			<PaperSize>Letter</PaperSize>
-			<Report isRef="0" />
-		</Page1>
-	</Pages>
-	<ReferencedAssemblies isList="true" count="8">
-		<value>System.Dll</value>
-		<value>System.Drawing.Dll</value>
-		<value>System.Windows.Forms.Dll</value>
-		<value>System.Data.Dll</value>
-		<value>System.Xml.Dll</value>
-		<value>Stimulsoft.Controls.Dll</value>
-		<value>Stimulsoft.Base.Dll</value>
-		<value>Stimulsoft.Report.Dll</value>
-	</ReferencedAssemblies>
-	<ReportAlias>Report</ReportAlias>
-	<ReportChanged>1/28/2024 11:00:09 PM</ReportChanged>
-	<ReportCreated>1/28/2024 8:35:11 PM</ReportCreated>
-	<ReportFile>D:\StimulsoftProject\Stimulsoft.Reports.Engine.NetCore.PdfExpoerter\StimulsoftPdfExporterSample\MrtFiles\Report.mrt</ReportFile>
-	<ReportGuid>b68a32c3c4f74fab86a0338e61946e39</ReportGuid>
-	<ReportName>Report</ReportName>
-	<ReportUnit>Inches</ReportUnit>
-	<ReportVersion>2023.1.1.0</ReportVersion>
-	<Script>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <Datas Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>Datas</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category>Datas</Category>
+        <Columns isList="true" count="1">
+          <value>Data,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>114e7736b97a4027a9d56995191ed775</Guid>
+        <Name>Datas</Name>
+      </Datas>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="2">
+      <Clauses2 Ref="3" type="Stimulsoft.Report.Dictionary.StiVirtualSource" isKey="true">
+        <Alias>Clauses2</Alias>
+        <Columns isList="true" count="0" />
+        <Dictionary isRef="1" />
+        <Filters isList="true" count="0" />
+        <GroupColumns isList="true" count="0" />
+        <Key>6e1347bb0ce345ae93692776de36b0ce</Key>
+        <Name>Clauses2</Name>
+        <NameInSource>Clauses</NameInSource>
+        <Results isList="true" count="0" />
+        <Sort isList="true" count="0" />
+      </Clauses2>
+      <Data Ref="4" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>Data</Alias>
+        <Columns isList="true" count="1">
+          <value>Data,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>8f112bcfa1d546af8495d78845c34dad</Key>
+        <Name>Data</Name>
+        <NameInSource>Data</NameInSource>
+      </Data>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>255968301ae34e1f8efb64da3e6d677b</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="5" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <DataBand2 Ref="6" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CalcInvisible>True</CalcInvisible>
+          <CanBreak>True</CanBreak>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,0.2,7.72,0.9</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0.1,0,7.5,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>X Nazanin,12</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="5" />
+              <Parent isRef="6" />
+              <Text>{Data.Data}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,RightToLeft=True,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Data</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="5" />
+          <Parent isRef="5" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>735693877a0c45ae8688290837e7b35a</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>2/1/2024 2:40:59 PM</ReportChanged>
+  <ReportCreated>1/28/2024 8:35:11 PM</ReportCreated>
+  <ReportFile>F:\Pdf\StimulsoftReports.Engine.NetCore.PersianPdfExporter\StiPdfExporterSample\MrtFiles\Report.mrt</ReportFile>
+  <ReportGuid>f86e9087edb84592b4a333464d1e5999</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2019.4.2.0</ReportVersion>
+  <Script>
 		using System;
 		using System.Drawing;
 		using System.Windows.Forms;
@@ -123,6 +144,6 @@
 		}
 		}
 	</Script>
-	<ScriptLanguage>CSharp</ScriptLanguage>
-	<Styles isList="true" count="0" />
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
 </StiSerializer>
