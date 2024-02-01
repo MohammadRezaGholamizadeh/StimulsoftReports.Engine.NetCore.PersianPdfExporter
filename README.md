@@ -18,9 +18,17 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   SetLicenseKey(licenseKey);
 
-  SetCustomFont(font, alias, fontStyle);
+  AddCustomFontBytes(font, alias, fontStyle);
 
-  SetCustomFont(fontName, extension, fontContent, alias);
+  AddCustomFontsBytes(fonts);
+
+  AddCustomFontFile(font);
+
+  AddCustomFontFiles(fonts);
+
+  AddCustomFontResource(font);
+
+  AddCustomFontResources(fonts);
 
   GetAllSettedFontsUntilNow();
 
@@ -28,7 +36,7 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   AddDataContentAsBusinessObject(name, data);
 
-  RenderWithBusinessObjectDataMode(showProgressState);
+  Render(showProgressState);
 
   ExportPdfToPath(absolutePath);
 
@@ -36,6 +44,13 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   ExportPdfAsCustomStream(customStream, settings);
 
+
+
+  AddDataContentAsDataSource(StiReportDataSource data);     => Has 2 OverLoads Methods
+
+  AddDataContent(name,data);                                => Has 19 OverLoad Methods
+
+  AddDataContentAsBusinessObject(name, data)                => Has 3 OverLoad Methods
 ```
 
 
@@ -56,7 +71,7 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set License Key To Stimulsoft Report Engine.
 
-- #### **SetCustomFont(font, alias, fontStyle)**
+- #### **AddCustomFontByte(font, alias, fontStyle)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `font`      | `byte[]` | **Required**. Font Bytes |
@@ -65,7 +80,43 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
 
-- #### **SetCustomFont(fontName, extension, fontContent, alias)**
+- #### **AddCustomFontByte(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<byte[]>` | **Required**. Fonts Bytes |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+
+- #### **AddCustomFontFile(font)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `font`      | `CustomFontFile` | **Required**. Dto Object With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontFiles(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<CustomFontFile>` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontResource(font)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `font`      | `CustomFontResource` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFontResources(fonts)**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `fonts`      | `IList<CustomFontResource>` | **Required**. Dto Objects With Font Details That You Want To Add |
+
+**Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
+
+- #### **AddCustomFont(fontName, extension, fontContent, alias)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `fontName`      | `string` | **Required**. Font Name |
@@ -74,7 +125,6 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 | `alias`      | `string?` | **Not Required**. Font Alias |
 
 **Method Description** : This Method Used For Set Custom Font (Client Choice) To Stimulsoft Report Engine.
-
 
 - #### **GetAllSettedFontsUntilNow()**
 |Description                                                                   |
@@ -98,7 +148,201 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
 **Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
 
-- #### **RenderWithBusinessObjectDataMode(showProgressState)**
+- #### **AddDataContentAsBusinessObjects(datas);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IList<StiBusinessObjectData>` | **Required**. Name Of Business Objects Data That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsBusinessObject(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IDictionary<string, dynamic> datas` | **Required**. Name Of Business Objects Data That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsDataSources(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `IDictionary<string, StiReportDataSource>` | **Required**. Datas Of DataSources That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsDataSource(data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `data`      | `StiReportDataSource` | **Required**. Data Of DataSource That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContentAsDataSource(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. Name Of DataSource That You Created In Stimulsoft Designer|
+| `data`      | `object` | **Required**. Data Of DataSource That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContent(name, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. Name Of DataContent That You Created In Stimulsoft Designer|
+| `data`      | `object` | **Required**. Data Of DataContent That You Created In Stimulsoft Designer|
+
+**Method Description** : This Method Used For Set Datas That You Want To Export In PDF To Stimulsoft Report Engine.
+
+- #### **AddDataContent(name, dataTable);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**. DataTable name in the Data Store.|
+| `dataTable`      | `DataTable` | **Required**. DataTable for registration |
+
+**Method Description** :  Registers an object in the Data Store.
+
+- #### **AddDataContent(name, dataSet);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.  Prefix for object registration.    |
+| `dataSet`      | `DataSet` | **Required**. DataSet for registration.       |
+
+**Method Description** :  Registers all DataTables and DataRelations which are in the specified DataSet in the Data Store.
+
+- #### **AddDataContent(dataSet);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `dataSet`      | `DataSet` | **Required**.   DataSet for registration.    |
+
+**Method Description** :  Registers all DataTable and DataRelation which are in the specified DataSet in the Data Store.
+
+- #### **AddDataContent(element, relationDirection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `element`      | `DataSet` | **Required**.    XElement for registration.   |
+| `relationDirection`      | `DataSet` | **Required**.   Specifies direction of the relation processing.   |
+
+**Method Description** :   Registers the DataCollection in the DataStore of the report.
+
+- #### **AddDataContent(name, element, relationDirection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.      Prefix for object registration.   |
+| `element`      | `DataSet` | **Required**.    XElement for registration.   |
+| `relationDirection`      | `DataSet` | **Required**.   Specifies direction of the relation processing.   |
+
+**Method Description** :   Registers the DataCollection in the DataStore of the report.
+
+- #### **AddDataContent(name, dataView);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.     DataView name in the Data Store.   |
+| `dataView`      | `DataView` | **Required**.    DataView for registration.   |
+
+**Method Description** :   Registers the DataCollection in the DataStore of the report.
+
+- #### **AddDataContent(dataView);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `dataView`      | `DataView` | **Required**.    DataView for registration.   |
+
+**Method Description** :   Registers DataView in the Data Store.
+
+- #### **AddDataContent(name, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.     SqlConnection name in the Data Store.   |
+| `connection`      | `SqlConnection` | **Required**.    SqlConnection for registration.  |
+
+**Method Description** :    Registers SqlConnection in the Data Store.
+
+- #### **AddDataContent(name, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    OleDbConnection name in the Data Store.   |
+| `connection`      | `OleDbConnection` | **Required**.   OleDbConnection for registration.  |
+
+**Method Description** :    Registers SqlConnection in the Data Store.
+
+- #### **AddDataContent(name, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.     OdbcConnection name in the Data Store.   |
+| `connection`      | `OdbcConnection` | **Required**.    OdbcConnection for registration.  |
+
+**Method Description** :   Registers OdbcConnection in the Data Store.
+
+- #### **AddDataContent(name, alias, data);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.    A data alias in the Data Store. |
+| `data`      | `object` | **Required**.     The object for registration.  |
+
+**Method Description** :   Registers an object in the Data Store.
+
+- #### **AddDataContent(name, alias, dataTable);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.     A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.      A data alias in the Data Store. |
+| `dataTable`      | `DataTable` | **Required**.      DataTable for registration.  |
+
+**Method Description** :   Registers an object in the Data Store.
+
+- #### **AddDataContent(name, alias, dataSet);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.    A data alias in the Data Store. |
+| `dataSet`      | `DataSet` | **Required**.      DataSet for registration.  |
+
+**Method Description** :  Registers all DataTables and DataRelations which are in the specified DataSet in the Data Store.
+
+- #### **AddDataContent(name, alias, dataView);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.    A data alias in the Data Store. |
+| `dataView`      | `DataView` | **Required**.       DataView for registration.  |
+
+**Method Description** :  Registers DataView in the Data Store.
+
+
+- #### **AddDataContent(name, alias, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.     A data alias in the Data Store. |
+| `connection`      | `SqlConnection ` | **Required**.     SqlConnection for registration.  |
+
+**Method Description** :  Registers SqlConnection in the Data Store.
+
+- #### **AddDataContent(name, alias, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.     A data alias in the Data Store. |
+| `connection`      | `OleDbConnection ` | **Required**.       OleDbConnection for registration.  |
+
+**Method Description** :  Registers OleDbConnection in the Data Store.
+
+- #### **AddDataContent(name, alias, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `name`      | `string` | **Required**.    A data name in the Data Store.   |
+| `alias`      | `string` | **Required**.     A data alias in the Data Store. |
+| `connection`      | `OdbcConnection ` | **Required**.      OdbcConnection for registration.  |
+
+**Method Description** :  Registers OdbcConnection in the Data Store.
+
+- #### **AddDataContent(name, alias, connection);**
+| Parameter | Type     | Description                                         |
+| :-------- | :------- | :--------------------------------                   |
+| `datas`      | `StiDataCollection` | **Required**.    DataCollection for registration. |
+
+**Method Description** :  Registers OdbcConnection in the Data Store.
+
+- #### **Render(showProgressState)**
 | Parameter | Type     | Description                                         |
 | :-------- | :------- | :--------------------------------                   |
 | `showProgressState`      | `bool` | **Required**. Start Rendering The Report With Data And Fonts That You Setted In Stimulsoft Design By Sti Report Engine|
@@ -156,8 +400,6 @@ This project is used by the following companies:
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammadreza-gholamizadeh-b94b1521b/)
 [![linkedin](https://img.shields.io/badge/github-0A66C2?style=for-the-badge&logo=github&logoColor=black)](https://github.com/MohammadRezaGholamizadeh/)
-
-
 
 
 ## Tech Stack

@@ -521,7 +521,7 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 
         public static StiReportResource AddDataContentAsBusinessObjects(
             this StiReportResource tools,
-            Dictionary<string, dynamic> datas)
+            IDictionary<string, dynamic> datas)
         {
             try
             {
