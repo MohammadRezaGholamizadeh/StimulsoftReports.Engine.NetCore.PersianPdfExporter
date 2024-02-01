@@ -1,85 +1,30 @@
 ﻿using Stimulsoft.Base;
 using Stimulsoft.Drawing;
 using Stimulsoft.Report;
-using Stimulsoft.Report.Dictionary;
 using Stimulsoft.Report.Export;
-using SystemDrawing = System.Drawing;
+using StimulsoftReports.Engine.NetCore.PersianPdfExporter.DtoFile;
+using System.Data;
 using System.Text;
 
 namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
 {
     public static class StiReportEngine
     {
-        public static StiReportConfiguration StartReport()
+        public static DtoFile.StiReportResource StartReport()
         {
-            return new StiReportConfiguration();
+            return new DtoFile.StiReportResource();
         }
 
-        public static StiReportConfiguration SetLicenseKey(
-           this StiReportConfiguration configuration,
+        public static DtoFile.StiReportResource SetLicenseKey(
+           this DtoFile.StiReportResource configuration,
            string licenseKey)
         {
             StiLicense.LoadFromString(licenseKey);
             return configuration;
         }
 
-        public static StiReportConfiguration SetCustomFont(
-            this StiReportConfiguration configuration,
-            byte[] font,
-            string? alias = null,
-            SystemDrawing.FontStyle? fontStyle = null)
-        {
-            try
-            {
-                StiFontCollection
-                    .AddFontBytes(
-                        font,
-                        alias,
-                        fontStyle);
-
-                configuration.Fonts.Add(font);
-            }
-            catch
-            {
-                throw;
-            }
-
-            return configuration;
-        }
-
-        public static List<FontFamily> GetAllSettedFontsUntilNow()
-        {
-            return StiFontCollection.Instance.Families.Distinct().ToList();
-        }
-
-        public static StiReportConfiguration SetCustomFont(
-           this StiReportConfiguration configuration,
-           string fontName,
-           string extension,
-           byte[] fontContent,
-           string? alias = null)
-        {
-            try
-            {
-                StiFontCollection
-                    .AddResourceFont(
-                        fontName,
-                        fontContent,
-                        extension,
-                        alias);
-
-                configuration.Fonts.Add(fontContent);
-            }
-            catch
-            {
-                throw;
-            }
-
-            return configuration;
-        }
-
-        public static StiReportConfiguration SetMrtFile(
-            this StiReportConfiguration configuration,
+        public static DtoFile.StiReportResource SetMrtFile(
+            this DtoFile.StiReportResource configuration,
             byte[] mrtFileBytes)
         {
             try
@@ -95,44 +40,20 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             return configuration;
         }
 
-        public static StiReportConfiguration AddDataContentAsBusinessObject(
-          this StiReportConfiguration tools,
-          string name,
-          dynamic data)
+
+        public static StiReport Render(
+        this DtoFile.StiReportResource configuration,
+        bool showProgressState = false)
         {
-            try
-            {
-                tools.ReportData.Add(name, data);
-            }
-
-            catch
-            {
-                throw;
-            }
-
-            return tools;
-        }
-
-        public static StiReport RenderWithBusinessObjectDataMode(
-           this StiReportConfiguration configuration,
-           bool showProgressState = false)
-        {
-            var report = new StiReport();
             SetDefaultMrtFileFont(configuration);
-
-            report.Load(configuration.MrtFileContent);
-
-            report.RegBusinessObject(
-                configuration.ReportData
-                     .Select(_ => new StiBusinessObjectData(null, _.Key, _.Value))
-                     .ToList());
-
-            report.Render(showProgressState);
-
-            return report;
+            configuration.ReportEngine.Load(configuration.MrtFileContent);
+            configuration.ReportEngine.RegReportDataSources()
+                                      .Render(showProgressState);
+            return configuration.ReportEngine;
         }
 
-        private static void SetDefaultMrtFileFont(StiReportConfiguration configuration)
+
+        private static void SetDefaultMrtFileFont(DtoFile.StiReportResource configuration)
         {
             var mrtFontName = "";
             try
@@ -210,7 +131,6 @@ namespace StimulsoftReports.Engine.NetCore.PersianPdfExporter
             customStream.Seek(0, SeekOrigin.Begin);
             return customStream;
         }
-
     }
 
 }

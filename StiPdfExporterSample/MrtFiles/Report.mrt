@@ -123,6 +123,6 @@
 		}
 		}
 	</Script>
-	<ScriptLanguage>CSharp</ScriptLanguage>
-	<Styles isList="true" count="0" />
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
 </StiSerializer>

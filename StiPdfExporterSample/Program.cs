@@ -23,6 +23,6 @@ StiReportEngine.StartReport()
                // This Method Used When You Are Using Business Object Data Mode
                .AddDataContentAsBusinessObject("Datas", datas)
                // Set Setting And Default Fonts That Used In Mrt File And Load And Render Mrt File
-               .RenderWithBusinessObjectDataMode()
+               .Render()
                // This Method Used When You Are Using Export Pdf To Absolute Path Mpde => If You Want To Export As Stream Use > .ExportPdfAsMemoryStream | .ExportPdfAsCustomStream
                .ExportPdfToPath($@"C:\Users\M.Gholamizadeh.TAAVSYS\Desktop\AllPdf\Test.Pdf");
