@@ -1,12 +1,15 @@
 
-# Project Title
+# Project Title : 
+## StimulsoftReports.Engine.NetCore.PersianPdfExporter 2024.2.4
+
+![Logo](https://raw.githubusercontent.com/MohammadRezaGholamizadeh/StimulsoftReports.Engine.NetCore.PersianPdfExporter/main/StimulsoftReports.Engine.NetCore.PersianPdfExporter/icon.ico)
+
 This Project Developed For Exporting The Pdf With Persian Or English Language By Stimulsoft Report Engile For Dotnet Project. 
 
 In This Project All Of Problems Of Exporting Persian Pdf and English Pdf Are Solved And Combined Over 100 Different Font To Use.
 
 The Font List That You Can Use For This Tools Explained In The End Of Readme File.
 Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
-
 
 
 ## Methods And Implementation
@@ -44,8 +47,6 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
 
   ExportPdfAsCustomStream(customStream, settings);
 
-
-
   AddDataContentAsDataSource(StiReportDataSource data);     => Has 2 OverLoads Methods
 
   AddDataContent(name,data);                                => Has 19 OverLoad Methods
@@ -53,7 +54,9 @@ Otherwise You Can Set Your Custom Own Font By Your Self To Export Pdf.
   AddDataContentAsBusinessObject(name, data)                => Has 3 OverLoad Methods
 ```
 
-
+## Feature Of Version 2024.2.4
+* Updated To Last Version Of Stimulsoft.NetEngine
+* Improve Performance
 
 
 ***
@@ -415,35 +418,35 @@ Add Package To Your Project With Command
 
 - .NET CLI
 ```bash
-  dotnet add package StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.1.3
+  dotnet add package StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.2.4
 ```
 
 - Package Manager
 ```bash
-  NuGet\Install-Package StimulsoftReports.Engine.NetCore.PersianPdfExportere -Version 2024.1.3
+  NuGet\Install-Package StimulsoftReports.Engine.NetCore.PersianPdfExportere -Version 2024.2.4
 ```
 
 - Package Reference
 ```bash
-  <PackageReference Include="StimulsoftReports.Engine.NetCore.PersianPdfExportere" Version="2024.1.3" />
+  <PackageReference Include="StimulsoftReports.Engine.NetCore.PersianPdfExportere" Version="2024.2.4" />
 ```
 
 - Packet CLI
 ```bash
-  paket add StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.1.3
+  paket add StimulsoftReports.Engine.NetCore.PersianPdfExportere --version 2024.2.4
 ```
 
 - Script & InterActive
 ```bash
-  #r "nuget: StimulsoftReports.Engine.NetCore.PersianPdfExportere, 2024.1.3"
+  #r "nuget: StimulsoftReports.Engine.NetCore.PersianPdfExportere, 2024.2.4"
 ```
 
 - Cake
 ```bash
   // Install StimulsoftReports.Engine.NetCore.PersianPdfExportere as a Cake Addin
-     #addin nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.1.3
+     #addin nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.2.4
   // Install StimulsoftReports.Engine.NetCore.PersianPdfExportere as a Cake Tool
-     #tool nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.1.3
+     #tool nuget:?package=StimulsoftReports.Engine.NetCore.PersianPdfExporter&version=2024.2.4
 ```
 
 ## Supported Default Fonts

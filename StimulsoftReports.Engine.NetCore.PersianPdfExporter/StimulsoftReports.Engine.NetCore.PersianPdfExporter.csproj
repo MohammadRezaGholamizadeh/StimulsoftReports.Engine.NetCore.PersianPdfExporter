@@ -8,7 +8,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
     <Title>Stimulsoft DotNet Report Persian Pdf Exporter</Title>
-    <Version>2024.1.4</Version>
+    <Version>2024.2.4</Version>
     <Authors>Stimulsoft - [ Mohammadreza Gholamizadeh - Phoenix ]</Authors>
     <Description>You Can Export Persian Pdf Easily And Perfectly With This Tools. Get Started With Readme File</Description>
     <Copyright>[ Mohammadreza Gholamizadeh - Phoenix ]</Copyright>
@@ -18,6 +18,7 @@
     <PackAsTool>False</PackAsTool>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>stimulsoft;dotnetpdf;pdf;convertpdf;pdfconvert;pdfexporter;export;pdfexport;stimul;stimulsoftengine;persianpdf;persianpdfexporter;stim;converter;txt;texttopdf;textpdf;softpdf;easypdf;quera;</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -446,7 +447,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stimulsoft.Reports.Engine.NetCore" Version="2024.1.3" />
+    <PackageReference Include="Stimulsoft.Reports.Engine.NetCore" Version="2024.2.4" />
   </ItemGroup>
 
   <ItemGroup>
